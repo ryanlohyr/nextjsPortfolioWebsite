@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -25,3 +27,79 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+body, html {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+#hero {
+  height: 100vh;
+  width: 100vw;
+  max-height: 700px;
+  overflow: hidden;
+  touch-action: pan-up;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  text-shadow: 0 0 5px #ffffff, 0 0 20px #000, 0 0 30px #000;
+}
+
+.headers {
+  touch-action: pan-up;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  text-shadow: 0 0 5px #ffffff, 0 0 20px #000, 0 0 30px #000;
+  font-size: 60px;
+
+}
+
+#hero h1 {
+  --fontSize: 60px;
+  --lineHeight: 80px;
+  width: auto;
+  height: calc(2 * var(--lineHeight));
+  line-height: var(--lineHeight);
+  margin: 0 auto 0;
+  font-size: var(--fontSize);
+}
+
+#hero a {
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+}
+
+#hero canvas {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+}
+
+.qualification__line{
+  display: block;
+  width: 1px;
+  height:100%;
+  background-color: #007FFF;
+  transform: translate(6px , -7px)
+
+}
+
+.qualification__rounder{
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-color: #007FFF;
+  border-radius: 50%;
+}
+
+
+
+
+ 
