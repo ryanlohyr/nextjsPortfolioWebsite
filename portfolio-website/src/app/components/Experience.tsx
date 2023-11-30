@@ -154,10 +154,10 @@ const Experience = () => {
 
 			<div className="mt-5 mb-10">
 				<div className="flex justify-center mb-5">
-					<Button className={`mr-5 ${isInternshipsToggled ? "underline" : ""}`} onClick={handleInternship}>
+					<Button className={`mr-5 hover:underline  ${isInternshipsToggled ? "underline" : ""}`} onClick={handleInternship}>
 						Technical Experiences
 					</Button>
-					<Button className={`mr-5 ${!isInternshipsToggled ? "underline" : ""}`} onClick={handleHackathon}>
+					<Button className={`mr-5 hover:underline ${!isInternshipsToggled ? "underline" : ""}`} onClick={handleHackathon}>
 						Others
 					</Button>
 				</div>

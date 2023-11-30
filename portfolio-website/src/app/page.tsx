@@ -2,14 +2,14 @@
 
 
 import Image from "next/image";
-
+import Script from 'next/script'
 import { ModeToggle } from "@/components/ui/darkModeToggleButton";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import AboutMe from "./components/AboutMe";
 import Experience from "./components/Experience";
-import Projects from "./components/Projects";
+import Projects from "./components/projects/Projects";
 
 export default function Home() {
 	

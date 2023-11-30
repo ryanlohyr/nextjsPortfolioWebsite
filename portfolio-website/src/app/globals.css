@@ -99,6 +99,11 @@ body, html {
   border-radius: 50%;
 }
 
+.slider{
+  width: 75vw;
+  height: 430px;
+  margin-bottom: 20px;
+}
 
 
 
