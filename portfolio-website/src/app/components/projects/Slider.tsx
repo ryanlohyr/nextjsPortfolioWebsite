@@ -60,7 +60,7 @@ const CarouselManager: React.FC<CarouselProps> = ({ slides }) => {
 	}
 
 	return (
-		<div className="w-full flex justify-center items-center">
+		<div className="w-3/4  flex justify-center items-center">
 			<ArrowLeft className="w-[50px] text-white cursor-pointer select-none text-2xl z-10" onClick={prevSlide} />
 			<div className="flex overflow-hidden relative">
 				<div
@@ -70,19 +70,17 @@ const CarouselManager: React.FC<CarouselProps> = ({ slides }) => {
 					{slides.map((slide, index) => (
 						<div className="w-full md:w-1/2 h-auto flex justify-center flex-shrink-0" key={index}>
                             <AlertDialog>
-							<Card className="lg:w-[420px] md:w-[300px] w-[320px]">
+							<Card className="lg:w-[420px] md:w-[300px] w-[320px] h-full">
 								<CardHeader>
 									<CardTitle>{slide.text}</CardTitle>
 									<CardDescription>The Description</CardDescription>
 								</CardHeader>
 
 								<CardContent> Some Content</CardContent>
-								<CardFooter className="flex justify-between">
+								<CardFooter className="flex justify-between" >
 									
-										<AlertDialogTrigger className="hover:underline text-white">
-											{/* <Button className="mt-8 bg-white text-black rounded-full" variant="outline"> */}
+										<AlertDialogTrigger className="hover:underline text-white w-[100px] -ml-3">
 												 More Info
-											{/* </Button> */}
 										</AlertDialogTrigger>
 										<AlertDialogContent>
 											<AlertDialogHeader>

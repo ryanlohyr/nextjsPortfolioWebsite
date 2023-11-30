@@ -19,7 +19,7 @@ const AboutMe = () => {
 							Singapore and would be graduating in the year 2026. I started learning about programming
 							during my National Service and love exploring new opportunities and technologies in my freetime!
 						</p>
-						<Button className="mt-8 bg-white text-black rounded-full" variant="outline">
+						<Button className="button mt-8 rounded-full" variant="outline" onClick={()=>{window.location.href = "mailto:ryanloh29@ymail.com?subject=It is a subject&body=Message from ryan %0D%0A Hi there";}}>
 							<Download className=" mr-2 h-4 w-4" />
 							<span> Download resume</span>
 						</Button>

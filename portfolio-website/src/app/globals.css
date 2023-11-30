@@ -2,109 +2,142 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+	:root {
+		--foreground-rgb: 255, 255, 255;
+		--background-start-rgb: 0, 0, 0;
+		--background-end-rgb: 0, 0, 0;
+	}
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	color: rgb(var(--foreground-rgb));
+	background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
-body, html {
-  margin: 0;
-  width: 100%;
-  height: 100%;
+body,
+html {
+	margin: 0;
+	width: 100%;
+	height: 100%;
 }
-
-
 
 #hero {
-  height: 100vh;
-  width: 100vw;
-  max-height: 700px;
-  overflow: hidden;
-  touch-action: pan-up;
-  color: #ffffff;
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-  text-shadow: 0 0 5px #ffffff, 0 0 20px #000, 0 0 30px #000;
+	height: 100vh;
+	width: 100vw;
+	max-height: 700px;
+	overflow: hidden;
+	touch-action: pan-up;
+	color: #ffffff;
+	font-family: "Montserrat", sans-serif;
+	text-align: center;
+	text-shadow: 0 0 5px #ffffff, 0 0 20px #000, 0 0 30px #000;
 }
 
 .headers {
-  touch-action: pan-up;
-  color: #ffffff;
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-  text-shadow: 0 0 5px #ffffff, 0 0 20px #000, 0 0 30px #000;
-  font-size: 60px;
-
+	touch-action: pan-up;
+	color: #ffffff;
+	font-family: "Montserrat", sans-serif;
+	text-align: center;
+	text-shadow: 0 0 5px #ffffff, 0 0 20px #000, 0 0 30px #000;
+	font-size: 60px;
 }
 
 #hero h1 {
-  --fontSize: 60px;
-  --lineHeight: 80px;
-  width: auto;
-  height: calc(2 * var(--lineHeight));
-  line-height: var(--lineHeight);
-  margin: 0 auto 0;
-  font-size: var(--fontSize);
+	--fontSize: 60px;
+	--lineHeight: 80px;
+	width: auto;
+	height: calc(2 * var(--lineHeight));
+	line-height: var(--lineHeight);
+	margin: 0 auto 0;
+	font-size: var(--fontSize);
 }
 
 #hero a {
-  margin-top: 10px;
-  display: inline-block;
-  text-decoration: none;
-  color: #fff;
+	margin-top: 10px;
+	display: inline-block;
+	text-decoration: none;
+	color: #fff;
 }
 
 #hero canvas {
-  display: block;
+	display: block;
+	position: absolute;
+	z-index: -1;
+	top: 0;
+}
+
+.qualification__line {
+	display: block;
+	width: 1px;
+	height: 100%;
+	background-color: #007fff;
+	transform: translate(6px, -7px);
+}
+
+.qualification__rounder {
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	background-color: #007fff;
+	border-radius: 50%;
+}
+
+.gradient-blue {
+	background: rgb(2, 0, 36);
+	background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 5%, rgba(0, 212, 255, 1) 100%);
+  border-radius: 14px;
+  width: 100px;
+  border: white;
+  transition: transform 0.3s ease; /* Smooth transition for the scaling */
+}
+
+.button {
+  transition: transform 0.3s ease; /* Smooth transition for the scaling */
+
+}
+
+.button:hover{
+  transform: scale(1.1); /* Enlarges the element to 110% of its size */
+}
+
+.gradient-blue:hover {
+  transform: scale(1.1); /* Enlarges the element to 110% of its size */
+}
+
+.icon{
+  transition: transform 0.3s ease; /* Smooth transition for the scaling */
+}
+
+.icon:hover{
+  transform: scale(1.3); /* Enlarges the element to 110% of its size */
+}
+
+.slider {
+	width: 75vw;
+	height: 430px;
+	margin-bottom: 20px;
+}
+
+
+.underline-effect::after {
+  content: '';
   position: absolute;
-  z-index: -1;
-  top: 0;
-}
-
-.qualification__line{
-  display: block;
   width: 1px;
-  height:100%;
-  background-color: #007FFF;
-  transform: translate(6px , -7px)
-
+  height: 2px; /* Thickness of the underline */
+  bottom: 0; /* Position right below the text */
+  left: 50%;
+  background-color: #007fff; /* Color of the underline */
+  transition: width 0.5s ease, left 0.5s ease; /* Adjust timing as needed */
 }
 
-.qualification__rounder{
-  display: inline-block;
-  width: 13px;
-  height: 13px;
-  background-color: #007FFF;
-  border-radius: 50%;
+.underline-effect:hover::after {
+  width: 100%;
+  left: 0;
 }
-
-.slider{
-  width: 75vw;
-  height: 430px;
-  margin-bottom: 20px;
-}
-
-
-
- 

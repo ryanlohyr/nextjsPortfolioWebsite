@@ -24,9 +24,9 @@ const Projects = () => {
 	];
 
 	return (
-		<div className="p-12 mb-20">
+		<div className="p-12">
 			<h1 className="headers">Projects</h1>
-			<div className="mt-7 w-full flex justify-center">
+			<div className="mt-7 flex justify-center">
 				<CarouselManager slides={slides}/>
 			</div>
 		</div>

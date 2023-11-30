@@ -51,13 +51,13 @@ const Hero = () => {
 				<div className="flex items-center justify-center">
 					<div className="flex justify-between w-32">
 						<a target="_blank" href="https://github.com/ryanlohyr">
-							<Github />
+							<Github className="icon"/>
 						</a>
 						<a target="_blank" href="https://www.linkedin.com/in/ryanlohyr/">
-							<Linkedin />
+							<Linkedin className="icon"/>
 						</a>
 						<a target="_blank" href="ryanloh29@gmail.com">
-							<Mail />
+							<Mail className="icon" />
 						</a>
 					</div>
 				</div>

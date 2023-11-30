@@ -10,6 +10,7 @@ import Hero from "./components/Hero";
 import AboutMe from "./components/AboutMe";
 import Experience from "./components/Experience";
 import Projects from "./components/projects/Projects";
+import ContactMe from "./components/ContactMe";
 
 export default function Home() {
 	
@@ -21,6 +22,7 @@ export default function Home() {
       <AboutMe></AboutMe> 
       <Experience></Experience>
       <Projects></Projects>
+      <ContactMe></ContactMe>
      
      
 		</div>
