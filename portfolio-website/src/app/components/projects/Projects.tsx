@@ -27,6 +27,22 @@ const Projects = () => {
 	
 	const slides :Slide[] = [
 		{
+			image: LingoBot,
+			text: "LingoBot",
+			description:"First Machine learning hackathon and was really suprised we got all the way to the finals! Used so many AI tools in this project, including OpenAI GPT3.5, TensorFlow recommenders, Google Cloud Speech-To-Text",
+			skills:"TensorFlow, Flask, MySQL",
+			platform:whatsapp,
+			liveLink:""
+		},
+		{
+			image: orbital,
+			text: "CloudWeGo API Gateway",
+			description: "Was tasked to create an API Gateway from scratch using ByteDance's open source middleware. Learnt a lot about how useful API Gatways in making efficient and scalable web applications.",
+			skills:"Apache Thrift, Hertz, Kitex, GO",
+			platform:web,
+			liveLink:""
+		},
+		{
 			image: Otdelit,
 			text: "Otdelit",
 			description:"This game was born from the hackathon Global Game Jam 2022, however we enjoyed the process of creating the game so much we continued on with development after the hackathon and eventually launched the game on the unity play website",
@@ -41,6 +57,14 @@ const Projects = () => {
 			skills:"Bubble io",
 			platform:web,
 			liveLink:""
+		},
+		{
+			image: chaChing,
+			text: "ChaChing",
+			description:"The 'TikTok Pay' project is a hybrid fiat-crypto payment system designed to simplify e-wallet and cryptocurrency wallet management, merging traditional and digital currency transactions using TikTok Token (TTT)",
+			skills:"Vue.JS, Stripe, Flask, MySQL",
+			platform:web,
+			liveLink:"https://devpost.com/software/tiktok-pay-8v2bg1"
 		},
 		{
 			image: NUSDegs,
@@ -58,30 +82,9 @@ const Projects = () => {
 			platform:ios,
 			liveLink:"https://github.com/ryanlohyr/Quizzler"
 		},
-		{
-			image: orbital,
-			text: "CloudWeGo API Gateway",
-			description: "Was tasked to create an API Gateway from scratch using ByteDance's open source middleware. Learnt a lot about how useful API Gatways in making efficient and scalable web applications.",
-			skills:"Apache Thrift, Hertz, Kitex, GO",
-			platform:web,
-			liveLink:""
-		},
-		{
-			image: chaChing,
-			text: "ChaChing",
-			description:"The 'TikTok Pay' project is a hybrid fiat-crypto payment system designed to simplify e-wallet and cryptocurrency wallet management, merging traditional and digital currency transactions using TikTok Token (TTT)",
-			skills:"Vue.JS, Stripe, Flask, MySQL",
-			platform:web,
-			liveLink:"https://devpost.com/software/tiktok-pay-8v2bg1"
-		},
-		{
-			image: LingoBot,
-			text: "LingoBot",
-			description:"First Machine learning hackathon and was really suprised we got all the way to the finals! Used so many AI tools in this project, including OpenAI GPT3.5, TensorFlow recommenders, Google Cloud Speech-To-Text",
-			skills:"TensorFlow, Flask, MySQL",
-			platform:whatsapp,
-			liveLink:""
-		},
+		
+		
+		
 	];
 
 	return (
