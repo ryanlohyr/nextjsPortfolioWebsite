@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -7,36 +7,67 @@ import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import emailjs from 'emailjs-com';
+
 const formSchema = z.object({
 	email: z.string().email(),
 	name: z.string().min(2).max(50),
-    subject: z.string().min(2).max(50),
+	subject: z.string().min(2).max(50),
+	message: z.string().min(2).max(1000),
 });
-
+const notifyS = () => toast("Your email has been sent and I will get back to you asap!");
+const notifyF = () => toast("So sorry but there seems to be an error sending this email, perhaps you could email me at ryanloh29@gmail.com");
 const ContactMe = () => {
+
+	const [showNotification, setShowNotification] = useState(false);
+	const [slideOut, setSlideOut] = useState(false);
+	const [notifMsg, setNotifMsg] = useState("");
+
 	// 1. Define your form.
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
 			email: "",
 			name: "",
-            subject:""
+			subject: "",
+			message: "",
 		},
 	});
+
 
 	// 2. Define a submit handler.
 	function onSubmit(values: z.infer<typeof formSchema>) {
 		// Do something with the form values.
 		// ✅ This will be type-safe and validated.
-		console.log(values);
+		emailjs.send(process.env.NEXT_PUBLIC_REACT_APP_SERVICE_ID || "", process.env.NEXT_PUBLIC_REACT_APP_TEMPLATE_ID || "", values, process.env.NEXT_PUBLIC_REACT_APP_USER_ID || "")
+          .then(function(response) {
+            notifyS()
+            console.log('SUCCESS!', response.status, response.text);
+			form.reset();
+         }, function(error) {
+            notifyF()
+			const mailtoLink = `mailto:ryanloh29@gmai.com?subject=${encodeURIComponent(values.subject)}&body=${encodeURIComponent('Name: ' + values.name + '\n' + 'Message: ' + values.message)}`;
+    		window.location.href = mailtoLink;
+            console.log('FAILED...', error);
+			form.reset();
+         });
+		
+	
 	}
 	return (
-		<div  id="contact" className="p-12 mb-20">
+		<div id="contact" className="p-12 mb-20">
+			{showNotification && (
+				<div className={`notification ${slideOut ? "slide-out" : ""}`}>
+					Your email has been sent and I will get back to you asap!
+				</div>
+			)}
 			<h1 className="headers underline-effect">Get in touch</h1>
 			<div className="flex justify-center">
-				<Form {...form}>
-					<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full md:w-3/4 ">
+				<Form  {...form}>
+					<form id='myform' onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full md:w-3/4 ">
 						<p className="text-left">
 							I&rsquo;m always on the lookout for new opportunities, so if you think I can be valuable to
 							you, send me a message and we can talk about it!
@@ -86,16 +117,27 @@ const ContactMe = () => {
 								</FormItem>
 							)}
 						/>
-						<div className="grid w-full gap-1.5">
-							<Label htmlFor="message">Your message</Label>
-							<Textarea placeholder="" id="message" />
-						</div>
+						<FormField
+							control={form.control}
+							name="message"
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel>Your Message</FormLabel>
+									<FormControl>
+										<Textarea placeholder="" {...field} />
+									</FormControl>
+									{/* <FormDescription>This is your public display name.</FormDescription> */}
+									<FormMessage />
+								</FormItem>
+							)}
+						/>
 						<Button className="gradient-blue" type="submit">
 							Submit
 						</Button>
 					</form>
 				</Form>
 			</div>
+			<ToastContainer position="bottom-right" autoClose={false}></ToastContainer>
 		</div>
 	);
 };
