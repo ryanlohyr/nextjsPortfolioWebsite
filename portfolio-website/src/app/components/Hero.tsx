@@ -1,8 +1,38 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { particlesCursor } from "threejs-toys";
 import ParticleCursor from "./particleCursor";
+
 import { Github, Linkedin, Mail } from "lucide-react";
 const Hero = () => {
+	const [showNotification, setShowNotification] = useState(false);
+	const [slideOut, setSlideOut] = useState(false);
+
+	const [index, setIndex] = useState(0);
+	const [subIndex, setSubIndex] = useState(0);
+	const [reverse, setReverse] = useState(false);
+	const words = ["making things people want.", "Machine Learning", "Entrepreneurship", "Software Engineering"];
+	const speed = 100; // Speed of typing, in milliseconds
+	const delay = 1500; // Delay before untyping, in milliseconds
+
+	useEffect(() => {
+		if (subIndex === words[index].length + 1 && !reverse) {
+			setTimeout(() => setReverse(true), delay);
+			return;
+		}
+
+		if (subIndex === 0 && reverse) {
+			setReverse(false);
+			setIndex((index + 1) % words.length);
+			return;
+		}
+
+		const timeout = setTimeout(() => {
+			setSubIndex(currentSubIndex => currentSubIndex + (reverse ? -1 : 1));
+		}, speed);
+
+		return () => clearTimeout(timeout);
+	}, [subIndex, index, reverse]);
+
 	useEffect(() => {
 		if (typeof window !== "undefined") {
 			const pc = particlesCursor({
@@ -20,6 +50,7 @@ const Hero = () => {
 				sleepTimeCoefX: 0.001,
 				sleepTimeCoefY: 0.002,
 			});
+
 			pc.uniforms.uColor.value.set(Math.random() * 0xffffff);
 			pc.uniforms.uCoordScale.value = 0.001 + Math.random() * 2;
 			pc.uniforms.uNoiseIntensity.value = 0.0001 + Math.random() * 0.001;
@@ -38,9 +69,32 @@ const Hero = () => {
 		}
 	}, []);
 
+	useEffect(() => {
+		setShowNotification(true);
+
+		const timer = setTimeout(() => {
+			setSlideOut(true);
+		}, 4500); // Start slide out animation before hiding notification
+
+		const removeNotificationTimer = setTimeout(() => {
+			setShowNotification(false);
+		}, 5000); // Hide notification after slide out
+
+		return () => {
+			clearTimeout(timer);
+			clearTimeout(removeNotificationTimer);
+		};
+	}, []);
+
 	return (
 		<div className="flex items-center justify-center" id="hero">
-			<canvas className="-z-10 top-0"></canvas>
+			{showNotification && (
+				<div className={`notification ${slideOut ? "slide-out" : ""}`}>
+					Click the homepage to see
+					<br></br>
+					the particles change colour
+				</div>
+			)}
 			<div>
 				<h1 className="w-auto h-auto leading-none my-auto mx-auto text-[60px]">
 					Hi
@@ -48,15 +102,16 @@ const Hero = () => {
 					I&lsquo;m Ryan
 				</h1>
 				<h3>An aspiring software engineer in NUS</h3>
+				<h4>Interested in {words[index].substring(0, subIndex)}</h4>
 				<div className="flex items-center justify-center">
 					<div className="flex justify-between w-32">
 						<a target="_blank" href="https://github.com/ryanlohyr">
-							<Github className="icon"/>
+							<Github className="icon" />
 						</a>
 						<a target="_blank" href="https://www.linkedin.com/in/ryanlohyr/">
-							<Linkedin className="icon"/>
+							<Linkedin className="icon" />
 						</a>
-						<a target="_blank" href="ryanloh29@gmail.com">
+						<a target="_blank" href="mailto:ryanloh29@gmail.com">
 							<Mail className="icon" />
 						</a>
 					</div>

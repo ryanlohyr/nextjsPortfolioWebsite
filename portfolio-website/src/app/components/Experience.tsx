@@ -45,7 +45,7 @@ const TechnicalExperience = () => {
 							dates="Jan 2024 - June 2024"
 							title="Google Developer Student Club - Software Engineer"
 						>
-							Excited for this one!
+							Part of the software engineering team to create a volunteer management system for the Movement for the Intellectually Disabled of Singapore (MINDS). Really grateful to be given the opporutinity to give back to the society via tech.
 						</TimelineItem>
 					</div>
 				</div>
@@ -92,7 +92,7 @@ const TechnicalExperience = () => {
 
 const OtherExperience = () => {
 	return (
-		<div>
+		<div >
 			<div className="text-white pl-6 flex justify-center ">
 				<div className="flex flex-row  w-2/3">
 					<div className="basis-1/5 flex justify-end pr-5">
@@ -104,7 +104,7 @@ const OtherExperience = () => {
 							dates="July 2022 - July 2023"
 							title="NUS Entrepreneurship Society - External Liaison Director"
 						>
-							TBC
+							In charge of a team of 11 to procure speakers for UNICON 2024, a student-led entrepreneurship event 
 						</TimelineItem>
 					</div>
 				</div>
@@ -117,7 +117,7 @@ const OtherExperience = () => {
 
 					<div className="basis-4/5">
 						<TimelineItem dates="Jan 2022 - May 2022" title="AngelHack Coach">
-							TBC
+							As the winnner of HackSingapore 2023, I was blessed with the opportunity to return to HackSingapore 2024 as a coach! Gave a second opinion to teams about not just the product their building but also feedback related to code quality
 						</TimelineItem>
 					</div>
 				</div>
@@ -130,7 +130,7 @@ const OtherExperience = () => {
 
 					<div className="basis-4/5">
 						<TimelineItem dates="Jan 2022 - May 2022" title="Moderator @Hacksingapore 2023">
-							TBC
+							First time moderating! Was a really scary yet fruitful experience as I not only had the pleasure of working with brilliant people from Grab, Open Government Products and Stash away, but also got to learn a lot about financial inclusivity!
 						</TimelineItem>
 					</div>
 				</div>
@@ -149,15 +149,21 @@ const Experience = () => {
 		setInternshipsToggled(false);
 	};
 	return (
-		<div>
+		<div id="experience">
 			<h1 className="headers">Experience</h1>
 
 			<div className="mt-5 mb-10">
 				<div className="flex justify-center mb-5">
-					<Button className={`mr-5 hover:underline  ${isInternshipsToggled ? "underline" : ""}`} onClick={handleInternship}>
+					<Button
+						className={`mr-5 hover:underline  ${isInternshipsToggled ? "underline" : ""}`}
+						onClick={handleInternship}
+					>
 						Technical Experiences
 					</Button>
-					<Button className={`mr-5 hover:underline ${!isInternshipsToggled ? "underline" : ""}`} onClick={handleHackathon}>
+					<Button
+						className={`mr-5 hover:underline ${!isInternshipsToggled ? "underline" : ""}`}
+						onClick={handleHackathon}
+					>
 						Others
 					</Button>
 				</div>

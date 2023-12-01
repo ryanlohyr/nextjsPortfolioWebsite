@@ -32,7 +32,7 @@ const ContactMe = () => {
 		console.log(values);
 	}
 	return (
-		<div className="p-12 mb-20">
+		<div  id="contact" className="p-12 mb-20">
 			<h1 className="headers underline-effect">Get in touch</h1>
 			<div className="flex justify-center">
 				<Form {...form}>

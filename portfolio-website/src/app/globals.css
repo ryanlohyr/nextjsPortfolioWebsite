@@ -98,6 +98,12 @@ html {
   transition: transform 0.3s ease; /* Smooth transition for the scaling */
 }
 
+.gradient-text {
+	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(5,29,73,1) 0%, rgba(0,212,255,1) 0%, rgba(9,67,121,1) 100%);
+	-webkit-background-clip: text;
+	color: transparent;
+  }
+
 .button {
   transition: transform 0.3s ease; /* Smooth transition for the scaling */
 
@@ -141,3 +147,34 @@ html {
   width: 100%;
   left: 0;
 }
+
+.notification {
+	position: fixed;
+	top: 60px;
+	left: -100%;
+	background: rgb(2,0,36);
+	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,121,1) 100%, rgba(0,212,255,1) 100%);
+	padding: 10px;
+	border-radius: 5px;
+	animation: slide-in 1s forwards;
+  }
+  
+  .slide-out {
+	animation: slide-out 1s forwards;
+  }
+  
+  @keyframes slide-in {
+	to {
+	  left: 20px;
+	}
+  }
+  
+  @keyframes slide-out {
+	from {
+	  left: 20px;
+	}
+	to {
+	  left: -100%;
+	}
+  }
+  

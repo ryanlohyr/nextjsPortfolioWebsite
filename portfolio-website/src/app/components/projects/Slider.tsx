@@ -26,13 +26,22 @@ interface CarouselProps {
 
 const CarouselManager: React.FC<CarouselProps> = ({ slides }) => {
 	const [current, setCurrent] = useState(0);
+	const [numSlides, setNumSlides] = useState(0);
 	const length = slides.length;
 	const smallWindowBreakpoint = 768;
 	var lastSlideIndex = length - 1;
 
 	const monitorWidth = () => {
-		if (window.innerWidth > smallWindowBreakpoint && current == lastSlideIndex) {
-			setCurrent(current - 1);
+		if (window.innerWidth > smallWindowBreakpoint) {
+			setNumSlides((length - 1) / 2);
+			// if(lastSlideIndex == length - 1){
+			// 	lastSlideIndex /= 2
+			// }
+			if (current > numSlides) {
+				setCurrent(numSlides);
+			}
+		} else {
+			setNumSlides(length - 1);
 		}
 	};
 
@@ -40,6 +49,10 @@ const CarouselManager: React.FC<CarouselProps> = ({ slides }) => {
 		monitorWidth();
 		window.addEventListener("resize", monitorWidth);
 	});
+
+	const handleDotClick = (index: React.SetStateAction<number>) => {
+		setCurrent(index);
+	};
 
 	const nextSlide = () => {
 		if (window.innerWidth > smallWindowBreakpoint) {
@@ -60,49 +73,109 @@ const CarouselManager: React.FC<CarouselProps> = ({ slides }) => {
 	}
 
 	return (
-		<div className="w-3/4  flex justify-center items-center">
-			<ArrowLeft className="w-[50px] text-white cursor-pointer select-none text-2xl z-10" onClick={prevSlide} />
-			<div className="flex overflow-hidden relative">
-				<div
-					className="flex w-full transition-transform duration-500 ease-in-out"
-					style={{ transform: `translateX(-${current * 100}%)` }}
-				>
-					{slides.map((slide, index) => (
-						<div className="w-full md:w-1/2 h-auto flex justify-center flex-shrink-0" key={index}>
-                            <AlertDialog>
-							<Card className="lg:w-[420px] md:w-[300px] w-[320px] h-full">
-								<CardHeader>
-									<CardTitle>{slide.text}</CardTitle>
-									<CardDescription>The Description</CardDescription>
-								</CardHeader>
+		<div className="w-full md:3/4 justify-center lg:h-[450px] h-[470px]">
+			<div className="w-full flex justify-center h-full">
+				{/* Left Arrow */}
+				<div className="flex items-center">
+					<ArrowLeft
+						className="w-[20px] md:w-[50px] text-white cursor-pointer select-none text-2xl z-10"
+						onClick={prevSlide}
+					/>
+				</div>
+				{/* Carousel */}
+				<div className="flex overflow-hidden relative">
+					<div
+						className="flex w-full h-full transition-transform duration-500 ease-in-out"
+						style={{ transform: `translateX(-${current * 100}%)` }}
+					>
+						{slides.map((slide, index) => (
+							<div className="w-full md:w-1/2 h-auto flex justify-center flex-shrink-0" key={index}>
+								<AlertDialog>
+									<Card className="border-none lg:w-[420px] md:w-[300px] w-[320px] h-full">
+										<CardHeader>
+											<CardTitle>{slide.text}</CardTitle>
+											<CardDescription>{slide.platform}</CardDescription>
+										</CardHeader>
 
-								<CardContent> Some Content</CardContent>
-								<CardFooter className="flex justify-between" >
-									
-										<AlertDialogTrigger className="hover:underline text-white w-[100px] -ml-3">
-												 More Info
-										</AlertDialogTrigger>
-										<AlertDialogContent>
-											<AlertDialogHeader>
-												<AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-												<AlertDialogDescription>
-													This action cannot be undone. This will permanently delete your
-													account and remove your data from our servers.
-												</AlertDialogDescription>
-											</AlertDialogHeader>
-											<AlertDialogFooter>
-												<AlertDialogCancel>Close</AlertDialogCancel>
-											</AlertDialogFooter>
-										</AlertDialogContent>
-									
-								</CardFooter>
-							</Card>
-                            </AlertDialog>
-						</div>
-					))}
+										<CardContent className="">
+											<Image
+												alt="project image"
+												className="object-contain h-[250px] mb-4"
+												src={slide.image}
+											></Image>
+											{slide.summary}
+											<p>Tech: {slide.skills}</p>
+										</CardContent>
+										<CardFooter className="flex justify-between">
+											<AlertDialogTrigger className="hover:underline text-white w-[100px] -ml-3">
+												More Info
+											</AlertDialogTrigger>
+											<AlertDialogContent>
+												<AlertDialogHeader>
+													<AlertDialogTitle>{slide.text}</AlertDialogTitle>
+													<CardDescription>{slide.platform}</CardDescription>
+													<CardDescription>{slide.description}</CardDescription>
+													<CardContent className="">
+														<Image
+															alt="project image"
+															className="object-contain h-[250px] mb-0"
+															src={slide.image}
+														></Image>
+													</CardContent>
+													<p>Tech: {slide.skills}</p>
+												</AlertDialogHeader>
+												<div className="flex space-between">
+													{slide.liveLink !== "" ? (
+														<a href={slide.liveLink} target="_blank">
+															<Button
+																className="button rounded-full w-[100px] mr-4 "
+																variant="outline"
+															>
+																View
+															</Button>
+														</a>
+													) : (
+														<div></div>
+													)}
+
+													<AlertDialogCancel className="button w-[100px]">
+														Close
+													</AlertDialogCancel>
+												</div>
+											</AlertDialogContent>
+										</CardFooter>
+									</Card>
+								</AlertDialog>
+							</div>
+						))}
+					</div>
+				</div>
+				{/* Right Arrow */}
+				<div className=" w-[20px] md:w-[50px] flex items-center">
+					<ArrowRight
+						className="w-[50px] text-white cursor-pointer select-none text-2xl z-10"
+						onClick={nextSlide}
+					/>
 				</div>
 			</div>
-			<ArrowRight className="w-[50px] text-white cursor-pointer select-none text-2xl z-10" onClick={nextSlide} />
+			{/* Navigation Dots */}
+			<div className="flex justify-center">
+				{Array.from({ length: numSlides + 1 }).map((_, index) => (
+					<span
+						key={index}
+						style={{
+							height: "10px",
+							width: "10px",
+							margin: "5px",
+							backgroundColor: current === index ? "#007fff" : "white",
+							borderRadius: "50%",
+							display: "inline-block",
+							cursor: "pointer",
+						}}
+						onClick={() => handleDotClick(index)}
+					/>
+				))}
+			</div>
 		</div>
 	);
 };
