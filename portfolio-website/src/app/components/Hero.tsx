@@ -56,13 +56,13 @@ const Hero = () => {
 			pc.uniforms.uColor.value.set(Math.random() * 0xffffff);
 			pc.uniforms.uCoordScale.value = 0.001 + Math.random() * 2;
 			pc.uniforms.uNoiseIntensity.value = 0.0001 + Math.random() * 0.001;
-			pc.uniforms.uPointSize.value = 1 + Math.random() * 10;
+			pc.uniforms.uPointSize.value = 1 + Math.random() * 3;
 
 			document.body.addEventListener("click", function (event) {
 				pc.uniforms.uColor.value.set(Math.random() * 0xffffff);
 				pc.uniforms.uCoordScale.value = 0.001 + Math.random() * 2;
 				pc.uniforms.uNoiseIntensity.value = 0.0001 + Math.random() * 0.001;
-				pc.uniforms.uPointSize.value = 1 + Math.random() * 10;
+				pc.uniforms.uPointSize.value = 1 + Math.random() * 3;
 			});
 
 			return () => {
@@ -92,9 +92,7 @@ const Hero = () => {
 		<div className="flex items-center justify-center" id="hero">
 			{showNotification && (
 				<div className={`notification ${slideOut ? "slide-out" : ""}`}>
-					Click the homepage to see
-					<br></br>
-					the particles change colour
+					Drag/tap your mouse on the homepage and see the effects!
 				</div>
 			)}
 			<div>
