@@ -36,7 +36,7 @@ const ContactMe = () => {
 			<h1 className="headers underline-effect">Get in touch</h1>
 			<div className="flex justify-center">
 				<Form {...form}>
-					<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-3/4 ">
+					<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full md:w-3/4 ">
 						<p className="text-left">
 							I&rsquo;m always on the lookout for new opportunities, so if you think I can be valuable to
 							you, send me a message and we can talk about it!
@@ -49,7 +49,7 @@ const ContactMe = () => {
 									<FormItem className="w-1/2 mr-4">
 										<FormLabel>Name</FormLabel>
 										<FormControl>
-											<Input placeholder="Type your name here" {...field} />
+											<Input placeholder="" {...field} />
 										</FormControl>
 										{/* <FormDescription>This is your public display name.</FormDescription> */}
 										<FormMessage />
@@ -63,7 +63,7 @@ const ContactMe = () => {
 									<FormItem className="w-1/2 ml-4">
 										<FormLabel>Email</FormLabel>
 										<FormControl>
-											<Input placeholder="Type your email here" {...field} />
+											<Input placeholder="" {...field} />
 										</FormControl>
 										{/* <FormDescription>This is your public display name.</FormDescription> */}
 										<FormMessage />
@@ -79,7 +79,7 @@ const ContactMe = () => {
 								<FormItem>
 									<FormLabel>Subject</FormLabel>
 									<FormControl>
-										<Input placeholder="Type your subject here" {...field} />
+										<Input placeholder="" {...field} />
 									</FormControl>
 									{/* <FormDescription>This is your public display name.</FormDescription> */}
 									<FormMessage />
@@ -88,7 +88,7 @@ const ContactMe = () => {
 						/>
 						<div className="grid w-full gap-1.5">
 							<Label htmlFor="message">Your message</Label>
-							<Textarea placeholder="Type your message here." id="message" />
+							<Textarea placeholder="" id="message" />
 						</div>
 						<Button className="gradient-blue" type="submit">
 							Submit
