@@ -14,9 +14,14 @@ import {
 	AlertDialogTitle,
 	AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { StaticImageData } from "next/image";
 
 interface Slide {
-	image: string;
+	platform: string;
+	skills: string;
+	description: string;
+	liveLink: string;
+	image: StaticImageData;
 	text: string;
 }
 
@@ -103,7 +108,6 @@ const CarouselManager: React.FC<CarouselProps> = ({ slides }) => {
 												className="object-contain h-[250px] mb-4"
 												src={slide.image}
 											></Image>
-											{slide.summary}
 											<p>Tech: {slide.skills}</p>
 										</CardContent>
 										<CardFooter className="flex justify-between">

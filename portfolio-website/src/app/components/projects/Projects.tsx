@@ -8,13 +8,24 @@ import chaChing from "../../../../public/chaChing.png";
 import orbital from "../../../../public/Orbital Poster MS3 Poster -front.png";
 import LingoBot from "../../../../public/LingoBot.png";
 import CarouselManager from "./Slider";
+import { StaticImageData } from "next/image";
 
 const Projects = () => {
 	const web = "Web Application"
 	const ios = "iOS"
 	const whatsapp = "Whatsapp Chatbot"
 	const cli = "Command Line Application"
-	const slides = [
+	type Slide = {
+		image: StaticImageData;
+		text: string;
+		description: string;
+		skills: string;
+		platform: string;
+		liveLink: string;
+	};
+
+	
+	const slides :Slide[] = [
 		{
 			image: Otdelit,
 			text: "Otdelit",

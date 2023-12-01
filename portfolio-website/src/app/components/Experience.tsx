@@ -1,7 +1,13 @@
 import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
 
-const TimelineItem = ({ dates, title, children }) => (
+// Define a type for the props
+type TimelineItemProps = {
+    dates: string;
+    title: string;
+    children: React.ReactNode;
+};
+const TimelineItem: React.FC<TimelineItemProps> = ({ dates, title, children }) => (
 	<div className="mb-8">
 		<h2>{title}</h2>
 		<h3 className="text-gray-400 pb-2">{dates}</h3>
