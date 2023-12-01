@@ -1,6 +1,8 @@
+declare module 'threejs-toys';
+
 import React, { useEffect, useState } from "react";
+
 import { particlesCursor } from "threejs-toys";
-import ParticleCursor from "./particleCursor";
 
 import { Github, Linkedin, Mail } from "lucide-react";
 const Hero = () => {
