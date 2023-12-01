@@ -21,7 +21,7 @@ const AboutMe = () => {
 							Singapore and would be graduating in the year 2026. I started learning about programming
 							during my National Service and love exploring new opportunities and technologies in my freetime!
 						</p>
-						<a  href="http://localhost:3000/ryanloh_resume.pdf" download="resume">
+						<a  href="https://ryanloh.vercel.app/ryanloh_resume.pdf" download="resume">
 						<Button className="button mt-8 rounded-full" variant="outline">
 							<Download className=" mr-2 h-4 w-4" />
 							<span> Download resume</span>
