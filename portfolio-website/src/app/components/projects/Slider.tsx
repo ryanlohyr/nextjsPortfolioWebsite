@@ -61,8 +61,10 @@ const CarouselManager: React.FC<CarouselProps> = ({ slides }) => {
 
 	const nextSlide = () => {
 		if (window.innerWidth > smallWindowBreakpoint) {
-			lastSlideIndex = lastSlideIndex / 2;
+			lastSlideIndex = Math.floor(lastSlideIndex / 2);
 		}
+		console.log("last slide ", lastSlideIndex)
+		console.log("curr ", current)
 		setCurrent(current === lastSlideIndex ? 0 : current + 1);
 	};
 
