@@ -7,6 +7,7 @@ import NUSDegs from "../../../../public/NUSDegs.png";
 import chaChing from "../../../../public/chaChing.png";
 import orbital from "../../../../public/Orbital Poster MS3 Poster -front.png";
 import LingoBot from "../../../../public/LingoBot.png";
+import PortfolioWebsite from "../../../../public/portfolioWebsite.png";
 import CarouselManager from "./Slider";
 import { StaticImageData } from "next/image";
 
@@ -55,6 +56,14 @@ const Projects = () => {
 			text: "FoodBank VMS",
 			description:"The first hackathon that we ever won, although it was a no-code application, we still had to build the entire system from the admin portal to the user portal and ensure both systems work as expected. Learnt a lot about communication and understanding our users.",
 			skills:"Bubble io",
+			platform:web,
+			liveLink:""
+		},
+		{
+			image: PortfolioWebsite,
+			text: "This Portfolio Website",
+			description:"Was really fun to make, shadcn and tailwind really makes web development so much easier. Third time building a portfolio website, the other two are (https://ryanlohyr.github.io/ryanloh/) and (https://ryanlohyr.github.io/practice-portfolio/) if you're wondering.",
+			skills:"NEXTJs, ThreeJS, tailwind, typescript",
 			platform:web,
 			liveLink:""
 		},
