@@ -78,7 +78,7 @@ const CarouselManager: React.FC<CarouselProps> = ({ slides }) => {
 	}
 
 	return (
-		<div className="w-full md:3/4 justify-center lg:h-[450px] h-[470px]">
+		<div className="w-full md:3/4 justify-center lg:h-[450px] md:h-[470px] h-[490px]">
 			<div className="w-full flex justify-center h-full">
 				{/* Left Arrow */}
 				<div className="flex items-center">
@@ -111,7 +111,7 @@ const CarouselManager: React.FC<CarouselProps> = ({ slides }) => {
 											<p>Tech: {slide.skills}</p>
 										</CardContent>
 										<CardFooter className="flex justify-between">
-											<AlertDialogTrigger className="hover:underline text-white w-[100px] -ml-3">
+											<AlertDialogTrigger className="hover:underline text-white w-[100px] -ml-[14px]">
 												More Info
 											</AlertDialogTrigger>
 											<AlertDialogContent>
