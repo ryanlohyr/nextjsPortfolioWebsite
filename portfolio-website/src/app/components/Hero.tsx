@@ -100,9 +100,9 @@ const Hero = () => {
 
 	return (
 		<div className="flex items-center justify-center" id="hero">
-			<div className="text-white absolute right-20 bottom-10 flex bouncing-chevron button" onClick={()=>{moveDown()}}>
+			<div className="text-white absolute right-[5vw] bottom-10 flex bouncing-chevron button" onClick={()=>{moveDown()}}>
 				<ChevronDown ></ChevronDown>
-				<p>Scroll Down</p>
+				<p className="select-none">Scroll Down</p>
 			</div>
 			{showNotification && (
 				<div className={`notification ${slideOut ? "slide-out" : ""}`}>
