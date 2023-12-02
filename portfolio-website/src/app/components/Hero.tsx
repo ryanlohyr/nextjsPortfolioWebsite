@@ -106,7 +106,7 @@ const Hero = () => {
 			</div>
 			{showNotification && (
 				<div className={`notification ${slideOut ? "slide-out" : ""}`}>
-					Drag/tap your mouse on the homepage and see the effects!
+					Drag/tap your mouse/finger on the homepage and see the effects!
 				</div>
 			)}
 			<div>
