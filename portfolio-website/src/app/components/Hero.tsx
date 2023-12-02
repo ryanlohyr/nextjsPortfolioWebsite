@@ -91,7 +91,7 @@ const Hero = () => {
 		var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
 
     // Scroll the page by one viewport height
-    window.scrollBy({
+    window.scrollTo({
         top: viewportHeight, // Scroll down by the height of the viewport
         behavior: 'smooth' // Smooth scroll
     });
