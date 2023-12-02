@@ -58,7 +58,7 @@ const ContactMe = () => {
 	
 	}
 	return (
-		<div id="contact" className="p-12 mb-20">
+		<div id="contact" className="p-12 mb-20 bg-black">
 			{showNotification && (
 				<div className={`notification ${slideOut ? "slide-out" : ""}`}>
 					Your email has been sent and I will get back to you asap!

@@ -8,7 +8,7 @@ import { Download } from "lucide-react";
 const AboutMe = () => {
 
 	return (
-		<div id="about" className="p-12 mb-20">
+		<div id="about" className="p-12 mb-20 bg-black">
 			<h1 className="headers">About me</h1>
 			<div className="mt-7 w-full flex justify-center">
 				<div className="flex flex-col md:flex-row items-center justify-center w-2/3">

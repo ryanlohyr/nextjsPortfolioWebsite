@@ -97,13 +97,13 @@ const Hero = () => {
 				</div>
 			)}
 			<div>
-				<h1 className="w-auto h-auto leading-none my-auto mx-auto text-[60px]">
+				<h1 className="select-none w-auto h-auto leading-none my-auto mx-auto text-[60px]">
 					Hi
 					<br />
 					I&lsquo;m Ryan
 				</h1>
-				<h3>An aspiring software engineer in NUS</h3>
-				<h4>Interested in {words[index].substring(0, subIndex)}</h4>
+				<h3 className="select-none">An aspiring software engineer in NUS</h3>
+				<h4 className="select-none">Interested in {words[index].substring(0, subIndex)}</h4>
 				<div className="flex items-center justify-center">
 					<div className="flex justify-between w-32">
 						<a target="_blank" href="https://github.com/ryanlohyr">
