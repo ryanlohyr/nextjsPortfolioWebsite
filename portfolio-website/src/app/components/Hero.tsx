@@ -87,21 +87,29 @@ const Hero = () => {
 		};
 	}, []);
 
-	const moveDown = () =>{
+	const moveDown = () => {
 		var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
 
-    // Scroll the page by one viewport height
-    window.scrollTo({
-        top: viewportHeight, // Scroll down by the height of the viewport
-        behavior: 'smooth' // Smooth scroll
-    });
-	}
-
+		// Scroll the page by one viewport height
+		// window.scrollTo({
+		//     top: viewportHeight, // Scroll down by the height of the viewport
+		//     behavior: 'smooth' // Smooth scroll
+		// });
+		const element = document.getElementById("about");
+		if (element) {
+			element.scrollIntoView({ behavior: "smooth" });
+		}
+	};
 
 	return (
-		<div className="flex items-center justify-center" id="hero">
-			<div className="text-white absolute right-[5vw] bottom-10 flex bouncing-chevron button" onClick={()=>{moveDown()}}>
-				<ChevronDown ></ChevronDown>
+		<div className="relative flex items-center justify-center" id="hero">
+			<div
+				className="text-white absolute right-[5vw] bottom-10 flex bouncing-chevron button"
+				onClick={() => {
+					moveDown();
+				}}
+			>
+				<ChevronDown></ChevronDown>
 				<p className="select-none">Scroll Down</p>
 			</div>
 			{showNotification && (
@@ -131,6 +139,7 @@ const Hero = () => {
 						</a>
 					</div>
 				</div>
+				
 			</div>
 		</div>
 	);
