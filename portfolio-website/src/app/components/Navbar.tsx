@@ -26,7 +26,7 @@ const Navbar = () => {
 						<DropdownMenuTrigger>
 							<Menu></Menu>
 						</DropdownMenuTrigger>
-						<DropdownMenuContent className=" bg-black md:hidden block">
+						<DropdownMenuContent className=" bg-black md:hidden block text-white">
 							<DropdownMenuItem>
 								<a href="#" className="hover:text-gray-300">
 									Home

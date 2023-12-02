@@ -97,7 +97,7 @@ const Projects = () => {
 	];
 
 	return (
-		<div id="projects" className="p-12 h-full bg-black">
+		<div id="projects" className="p-12 h-full bg-black text-white">
 			<h1 className="headers">Projects</h1>
 			<div className="mt-7 flex justify-center">
 				<CarouselManager slides={slides} />
