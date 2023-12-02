@@ -13,11 +13,13 @@ export default function Home() {
 		<div id="app">
 			<Navbar></Navbar>
 			<Hero></Hero>
+			<div className="bg-black">
 			<AboutMe></AboutMe>
 			<Experience></Experience>
 			<Projects></Projects>
 			<ContactMe></ContactMe>
 			<Footer></Footer>
+			</div>
 		</div>
 	);
 }
