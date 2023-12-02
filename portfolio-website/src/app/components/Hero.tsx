@@ -87,7 +87,8 @@ const Hero = () => {
 			clearTimeout(removeNotificationTimer);
 		};
 	}, []);
-
+	//test
+	
 	return (
 		<div className="flex items-center justify-center" id="hero">
 			{showNotification && (
