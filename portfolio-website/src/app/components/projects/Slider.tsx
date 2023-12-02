@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -98,7 +98,7 @@ const CarouselManager: React.FC<CarouselProps> = ({ slides }) => {
 						{slides.map((slide, index) => (
 							<div className="w-full md:w-1/2 h-auto flex justify-center flex-shrink-0" key={index}>
 								<AlertDialog>
-									<Card className="border-none lg:w-[420px] md:w-[300px] w-[320px] h-full">
+									<Card className="border-none lg:w-[420px] md:w-[300px] w-[320px] h-full ">
 										<CardHeader>
 											<CardTitle>{slide.text}</CardTitle>
 											<CardDescription>{slide.platform}</CardDescription>
@@ -116,7 +116,7 @@ const CarouselManager: React.FC<CarouselProps> = ({ slides }) => {
 											<AlertDialogTrigger className="hover:underline text-white w-[100px] -ml-[14px]">
 												More Info
 											</AlertDialogTrigger>
-											<AlertDialogContent>
+											<AlertDialogContent className="text-white">
 												<AlertDialogHeader>
 													<AlertDialogTitle>{slide.text}</AlertDialogTitle>
 													<CardDescription>{slide.platform}</CardDescription>

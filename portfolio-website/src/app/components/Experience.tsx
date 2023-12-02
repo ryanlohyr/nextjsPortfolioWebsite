@@ -155,7 +155,7 @@ const Experience = () => {
 		setInternshipsToggled(false);
 	};
 	return (
-		<div id="experience" className="bg-black">
+		<div id="experience" className="text-white bg-black">
 			<h1 className="headers">Experience</h1>
 
 			<div className="mt-5 mb-10">

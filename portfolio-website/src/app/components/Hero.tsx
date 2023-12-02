@@ -1,10 +1,9 @@
-declare module 'threejs-toys';
+declare module "threejs-toys";
 
 import React, { useEffect, useState } from "react";
 
 import { particlesCursor } from "threejs-toys";
-
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
 const Hero = () => {
 	const [showNotification, setShowNotification] = useState(false);
 	const [slideOut, setSlideOut] = useState(false);
@@ -87,10 +86,24 @@ const Hero = () => {
 			clearTimeout(removeNotificationTimer);
 		};
 	}, []);
-	//test
-	
+
+	const moveDown = () =>{
+		var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    // Scroll the page by one viewport height
+    window.scrollBy({
+        top: viewportHeight, // Scroll down by the height of the viewport
+        behavior: 'smooth' // Smooth scroll
+    });
+	}
+
+
 	return (
 		<div className="flex items-center justify-center" id="hero">
+			<div className="text-white absolute right-20 bottom-10 flex bouncing-chevron button" onClick={()=>{moveDown()}}>
+				<ChevronDown ></ChevronDown>
+				<p>Scroll Down</p>
+			</div>
 			{showNotification && (
 				<div className={`notification ${slideOut ? "slide-out" : ""}`}>
 					Drag/tap your mouse on the homepage and see the effects!
@@ -102,6 +115,7 @@ const Hero = () => {
 					<br />
 					I&lsquo;m Ryan
 				</h1>
+
 				<h3 className="select-none">An aspiring software engineer in NUS</h3>
 				<h4 className="select-none">Interested in {words[index].substring(0, subIndex)}</h4>
 				<div className="flex items-center justify-center">
