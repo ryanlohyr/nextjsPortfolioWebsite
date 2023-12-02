@@ -34,49 +34,56 @@ const CarouselManager: React.FC<CarouselProps> = ({ slides }) => {
 	const [numSlides, setNumSlides] = useState(0);
 	const length = slides.length;
 	const smallWindowBreakpoint = 768;
-	var lastSlideIndex = length - 1;
-
-	const monitorWidth = () => {
-		if (window.innerWidth > smallWindowBreakpoint) {
-			setNumSlides((length - 1) / 2);
-			// if(lastSlideIndex == length - 1){
-			// 	lastSlideIndex /= 2
-			// }
-			if (current > numSlides) {
-				setCurrent(numSlides);
-			}
-		} else {
-			setNumSlides(length - 1);
-		}
+  
+	// Function to update numSlides based on window width
+	const updateNumSlides = () => {
+	  const newNumSlides = window.innerWidth > smallWindowBreakpoint
+		? Math.floor((length - 1) / 2)
+		: length - 1;
+	  setNumSlides(newNumSlides);
 	};
-
+  
+	// Update numSlides on window resize
 	useEffect(() => {
-		monitorWidth();
-		window.addEventListener("resize", monitorWidth);
-	});
-
+	  updateNumSlides();
+	  const handleResize = () => updateNumSlides();
+	  window.addEventListener('resize', handleResize);
+  
+	  // Cleanup function
+	  return () => {
+		window.removeEventListener('resize', handleResize);
+	  };
+	}, []); // Empty dependency array ensures this runs once on mount
+  
+	// Update current when numSlides changes
+	useEffect(() => {
+	  if (current > numSlides) {
+		setCurrent(numSlides);
+	  }
+	}, [numSlides]); // Dependency on numSlides
+  
 	const handleDotClick = (index: React.SetStateAction<number>) => {
-		setCurrent(index);
+	  setCurrent(index);
 	};
-
+  
 	const nextSlide = () => {
-		if (window.innerWidth > smallWindowBreakpoint) {
-			lastSlideIndex = Math.floor(lastSlideIndex / 2);
-		}
-		console.log("last slide ", lastSlideIndex)
-		console.log("curr ", current)
-		setCurrent(current === lastSlideIndex ? 0 : current + 1);
+	  const lastSlideIndex = (window.innerWidth > smallWindowBreakpoint)
+		? Math.floor((length - 1) / 2)
+		: length - 1;
+  
+	  setCurrent(current === lastSlideIndex ? 0 : current + 1);
 	};
-
+  
 	const prevSlide = () => {
-		if (window.innerWidth > smallWindowBreakpoint) {
-			lastSlideIndex = lastSlideIndex / 2;
-		}
-		setCurrent(current === 0 ? lastSlideIndex : current - 1);
+	  const lastSlideIndex = (window.innerWidth > smallWindowBreakpoint)
+		? Math.floor((length - 1) / 2)
+		: length - 1;
+  
+	  setCurrent(current === 0 ? lastSlideIndex : current - 1);
 	};
-
+  
 	if (!Array.isArray(slides) || slides.length <= 0) {
-		return null;
+	  return null;
 	}
 
 	return (
