@@ -87,7 +87,7 @@ const CarouselManager: React.FC<CarouselProps> = ({ slides }) => {
 	}
 
 	return (
-		<div className="w-full md:3/4 justify-center lg:h-[450px] md:h-[470px] h-[490px]">
+		<div className="w-full md:w-2/3 justify-center lg:h-[460px] md:h-[475px] h-[490px]">
 			<div className="w-full flex justify-center h-full">
 				{/* Left Arrow */}
 				<div className="flex items-center">

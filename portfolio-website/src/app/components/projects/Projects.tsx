@@ -37,10 +37,10 @@ const Projects = () => {
 		},
 		{
 			image: orbital,
-			text: "CloudWeGo API Gateway",
+			text: "ConnectMama",
 			description: "Was tasked to create an API Gateway from scratch using ByteDance's open source middleware. Learnt a lot about how useful API Gatways in making efficient and scalable web applications.",
-			skills:"Apache Thrift, Hertz, Kitex, GO",
-			platform:web,
+			skills:"Apache Thrift, CloudWeGo, GO",
+			platform:"API Gateway",
 			liveLink:""
 		},
 		{
