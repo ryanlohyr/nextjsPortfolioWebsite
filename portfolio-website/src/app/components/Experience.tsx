@@ -27,7 +27,7 @@ const TimelineLine = () => {
 const TechnicalExperience = () => {
 	return (
 		<div>
-			<div className="text-white pl-6 flex justify-center ">
+			<div className="text-white flex justify-center ">
 				<div className="flex flex-row  w-2/3">
 					<div className="basis-1/5 flex justify-end pr-5">
 						<TimelineLine></TimelineLine>
@@ -40,7 +40,7 @@ const TechnicalExperience = () => {
 					</div>
 				</div>
 			</div>
-			<div className="text-white pl-6 flex justify-center ">
+			<div className="text-white flex justify-center ">
 				<div className="flex flex-row  w-2/3">
 					<div className="basis-1/5 flex justify-end pr-5">
 						<TimelineLine></TimelineLine>
@@ -56,7 +56,7 @@ const TechnicalExperience = () => {
 					</div>
 				</div>
 			</div>
-			<div className="text-white pl-6 flex justify-center ">
+			<div className="text-white flex justify-center ">
 				<div className="flex flex-row  w-2/3">
 					<div className="basis-1/5 flex justify-end pr-5">
 						<TimelineLine></TimelineLine>
@@ -75,7 +75,7 @@ const TechnicalExperience = () => {
 					</div>
 				</div>
 			</div>
-			<div className="text-white pl-6 flex justify-center ">
+			<div className="text-white  flex justify-center ">
 				<div className="flex flex-row  w-2/3">
 					<div className="basis-1/5 flex justify-end pr-5">
 						<TimelineLine></TimelineLine>
@@ -99,7 +99,7 @@ const TechnicalExperience = () => {
 const OtherExperience = () => {
 	return (
 		<div >
-			<div className="text-white pl-6 flex justify-center ">
+			<div className="text-white  flex justify-center ">
 				<div className="flex flex-row  w-2/3">
 					<div className="basis-1/5 flex justify-end pr-5">
 						<TimelineLine></TimelineLine>
@@ -115,7 +115,7 @@ const OtherExperience = () => {
 					</div>
 				</div>
 			</div>
-			<div className="text-white pl-6 flex justify-center ">
+			<div className="text-white  flex justify-center ">
 				<div className="flex flex-row  w-2/3">
 					<div className="basis-1/5 flex justify-end pr-5">
 						<TimelineLine></TimelineLine>
@@ -128,7 +128,7 @@ const OtherExperience = () => {
 					</div>
 				</div>
 			</div>
-			<div className="text-white pl-6 flex justify-center ">
+			<div className="text-white  flex justify-center ">
 				<div className="flex flex-row  w-2/3">
 					<div className="basis-1/5 flex justify-end pr-5">
 						<TimelineLine></TimelineLine>

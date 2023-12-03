@@ -69,8 +69,8 @@ const ContactMe = () => {
 				<Form  {...form}>
 					<form id='myform' onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full md:w-3/4 ">
 						<p className="text-left">
-							I&rsquo;m always on the lookout for new opportunities, so if you think I can be valuable to
-							you, send me a message and we can talk about it!
+							I&rsquo;m constantly on the lookout for new opportunities, so if you think I can be of value to you
+							, send me a message and lets chat!
 						</p>
 						<div className="flex">
 							<FormField
@@ -122,7 +122,7 @@ const ContactMe = () => {
 							name="message"
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Your Message</FormLabel>
+									<FormLabel>Message</FormLabel>
 									<FormControl>
 										<Textarea placeholder="" {...field} />
 									</FormControl>

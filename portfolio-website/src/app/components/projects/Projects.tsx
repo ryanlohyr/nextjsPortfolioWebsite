@@ -38,7 +38,7 @@ const Projects = () => {
 		{
 			image: orbital,
 			text: "ConnectMama",
-			description: "Was tasked to create an API Gateway from scratch using ByteDance's open source middleware. Learnt a lot about how useful API Gatways in making efficient and scalable web applications.",
+			description: "Tasked to create an API Gateway from scratch using ByteDance's open source middleware, CloudWeGo. Learnt a lot about how useful API Gatways in making efficient and scalable web applications.",
 			skills:"Apache Thrift, CloudWeGo, GO",
 			platform:"API Gateway",
 			liveLink:""
@@ -78,7 +78,7 @@ const Projects = () => {
 		{
 			image: NUSDegs,
 			text: "NUS Degs",
-			description:"A project that was under CS2113 Software Engineering Principles. One of the most time consuming mods I have ever taken but it was so so fun. Using topological sort to create the recommended schedule was refreshing as I did not know all that leetcode will actually come in handy.",
+			description:"A project under CS2113 (Software Engineering & Object-Oriented Programming). One of the most time consuming mods I have ever taken but it was so so fun. Using topological sort to create the recommended schedule was refreshing as I did not know all that leetcode will actually come in handy.",
 			skills:"Java, Gradle, JUnit",
 			platform:cli,
 			liveLink:"https://ay2324s1-cs2113-t17-4.github.io/tp/UserGuide.html"
