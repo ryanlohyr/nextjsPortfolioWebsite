@@ -12,87 +12,126 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-const Navbar = () => {
-	return (
-		<nav className="fixed top-0 left-0 right-0 text-white p-4 z-50 bg-black">
-			<div className="container mx-auto flex justify-between items-center">
-				<div>
-					<a href="#" className="text-lg font-bold">
-						<span className="gradient-text">RL</span>
-					</a>
-				</div>
-				<div className="md:hidden block bg-white-400">
-					<DropdownMenu>
-						<DropdownMenuTrigger>
-							<Menu></Menu>
-						</DropdownMenuTrigger>
-						<DropdownMenuContent className=" bg-black md:hidden block text-white">
-							<DropdownMenuItem>
-								<a href="#" className="hover:text-gray-300">
-									Home
-								</a>
-							</DropdownMenuItem>
-							<DropdownMenuItem>
-								<a href="#about" className="hover:text-gray-300">
-									About
-								</a>
-							</DropdownMenuItem>
-							<DropdownMenuItem>
-								<a href="#experience" className="hover:text-gray-300">
-									Experience
-								</a>
-							</DropdownMenuItem>
-							<DropdownMenuItem>
-								<a href="#projects" className="hover:text-gray-300">
-									Projects
-								</a>
-							</DropdownMenuItem>
-							<DropdownMenuItem>
-								<a href="#contact" className="hover:text-gray-300">
-									Contact
-								</a>
-							</DropdownMenuItem>
-						</DropdownMenuContent>
-					</DropdownMenu>
-				</div>
-				<div className="md:block hidden">
-					<ul className="flex">
-						<li className="mr-8">
-							<a href="#" className="hover:text-gray-300">
-								Home
-							</a>
-						</li>
-						<li className="mr-8">
-							<a href="#about" className="hover:text-gray-300">
-								About
-							</a>
-						</li>
-						<li className="mr-8">
-							<a href="#experience" className="hover:text-gray-300">
-								Experience
-							</a>
-						</li>
-						<li className="mr-8">
-							<a href="#projects" className="hover:text-gray-300">
-								Projects
-							</a>
-						</li>
-						<li className="mr-8">
-							<a href="#contact" className="hover:text-gray-300">
-								Contact
-							</a>
-						</li>
-						{/* <li className="mr-8">
-          <Link  target='_blank' className="hover:text-gray-300" href="/blog">Blog</Link>
-        </li> */}
+interface NavbarProps {
+	type: "website" | "blog";
+}
 
-						{/* <li className="mr-8">
+const Navbar: React.FC<NavbarProps> = ({ type }) => {
+	return (
+		<div>
+			{type == "website" ? (
+				<nav className="fixed top-0 left-0 right-0 text-white p-4 z-50 bg-black">
+					<div className="container mx-auto flex justify-between items-center">
+						<div>
+							<a href="#" className="text-lg font-bold">
+								<span className="gradient-text">RL</span>
+							</a>
+						</div>
+						<div className="">
+							<div className="md:hidden block bg-white-400">
+								<DropdownMenu>
+									<DropdownMenuTrigger>
+										<Menu></Menu>
+									</DropdownMenuTrigger>
+									<DropdownMenuContent className=" bg-black md:hidden block text-white">
+										<DropdownMenuItem>
+											<a href="#" className="hover:text-gray-300">
+												Home
+											</a>
+										</DropdownMenuItem>
+										<DropdownMenuItem>
+											<a href="#about" className="hover:text-gray-300">
+												About
+											</a>
+										</DropdownMenuItem>
+										<DropdownMenuItem>
+											<a href="#experience" className="hover:text-gray-300">
+												Experience
+											</a>
+										</DropdownMenuItem>
+										<DropdownMenuItem>
+											<a href="#projects" className="hover:text-gray-300">
+												Projects
+											</a>
+										</DropdownMenuItem>
+										<DropdownMenuItem>
+											<a href="#contact" className="hover:text-gray-300">
+												Contact
+											</a>
+										</DropdownMenuItem>
+										<DropdownMenuItem>
+											<a target="_blank" href="/blog" className="hover:text-gray-300">
+												Blog
+											</a>
+										</DropdownMenuItem>
+									</DropdownMenuContent>
+								</DropdownMenu>
+							</div>
+							<div className="md:block hidden">
+								<ul className="flex">
+									<li className="mr-8">
+										<a href="#" className="hover:text-gray-300">
+											Home
+										</a>
+									</li>
+									<li className="mr-8">
+										<a href="#about" className="hover:text-gray-300">
+											About
+										</a>
+									</li>
+									<li className="mr-8">
+										<a href="#experience" className="hover:text-gray-300">
+											Experience
+										</a>
+									</li>
+									<li className="mr-8">
+										<a href="#projects" className="hover:text-gray-300">
+											Projects
+										</a>
+									</li>
+									<li className="mr-8">
+										<a href="#contact" className="hover:text-gray-300">
+											Contact
+										</a>
+									</li>
+									<li className="mr-8">
+										<a target="_blank" href="/blog" className="hover:text-gray-300">
+											Blog
+										</a>
+									</li>
+
+									{/* <li className="mr-8">
             <ModeToggle></ModeToggle>
         </li> */}
-					</ul>
-				</div>
-			</div>
-		</nav>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</nav>
+			) : (
+				<nav className="fixed top-0 left-0 right-0 text-white p-4 z-50 ">
+					<div className="container mx-auto flex justify-between items-center">
+						<div>
+							<a href="#" className="text-lg font-bold">
+								<span className="gradient-text">RL</span>
+							</a>
+						</div>
+						<div className=" dark:bg-black bg-white dark:text-white text-black">
+							<ul className="flex dark:bg-black bg-white">
+								<li className="mr-4 dark:bg-black bg-white">
+									<a target="_blank" href="/" className="hover:text-gray-300">
+										Portfolio
+									</a>
+								</li>
+								<li className="mr-0">
+									<ModeToggle></ModeToggle>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			)}
+		</div>
 	);
 };
 

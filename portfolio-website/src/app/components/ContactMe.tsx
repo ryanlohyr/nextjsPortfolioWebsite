@@ -64,7 +64,7 @@ const ContactMe = () => {
 					Your email has been sent and I will get back to you asap!
 				</div>
 			)}
-			<h1 className="headers underline-effect">Get in touch</h1>
+			<h1 className="dark_headers underline-effect text-white">Get in touch</h1>
 			<div className="flex justify-center">
 				<Form  {...form}>
 					<form id='myform' onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full md:w-3/4 ">

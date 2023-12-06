@@ -16,10 +16,11 @@
 	}
 }
 
+/* 
 body {
 	color: rgb(var(--foreground-rgb));
 	background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
-}
+} */
 
 body,
 html {
@@ -41,12 +42,18 @@ html {
 	text-shadow: 0 0 5px #ffffff, 0 0 20px #000, 0 0 30px #000;
 }
 
-.headers {
+.dark_headers {
 	touch-action: pan-up;
-	color: #ffffff;
 	font-family: "Montserrat", sans-serif;
 	text-align: center;
 	text-shadow: 0 0 5px #ffffff, 0 0 20px #000, 0 0 30px #000;
+	font-size: 60px;
+}
+
+.headers {
+	touch-action: pan-up;
+	font-family: "Montserrat", sans-serif;
+	text-align: center;
 	font-size: 60px;
 }
 
@@ -111,6 +118,8 @@ html {
 	color: transparent;
 }
 
+
+
 .button {
 	transition: transform 0.3s ease; /* Smooth transition for the scaling */
 }
@@ -148,6 +157,25 @@ html {
 	50% {
 		transform: translateY(-20px);
 	}
+}
+
+.icon-wrapper {
+	display: block;
+	position: relative;
+	width: 60px;
+	height: 60px;
+	margin: auto;
+	cursor: pointer;
+	transition: transform 0.3s linear;
+}
+.icon-wrapper.clicked .sun-icon {
+	/* Transformations for Sun icon when clicked */
+	transform: rotate(45deg); /* Example transformation */
+}
+
+.icon-wrapper.clicked .moon-icon {
+	/* Transformations for Moon icon when clicked */
+	transform: rotate(-45deg); /* Example transformation */
 }
 
 .underline-effect::after {

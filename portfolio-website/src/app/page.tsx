@@ -7,11 +7,14 @@ import Experience from "./components/Experience";
 import Projects from "./components/projects/Projects";
 import ContactMe from "./components/ContactMe";
 import Footer from "./components/Footer";
+import { ModeToggle } from "@/components/ui/darkModeToggleButton";
 
 export default function Home() {
 	return (
 		<div id="app">
-			<Navbar ></Navbar>
+			           
+
+			<Navbar type="website"></Navbar>
 			<Hero></Hero>
 			<div className="bg-black text-white">
 				<AboutMe></AboutMe>
