@@ -82,7 +82,6 @@ const ContactMe = () => {
 										<FormControl>
 											<Input placeholder="" {...field} />
 										</FormControl>
-										{/* <FormDescription>This is your public display name.</FormDescription> */}
 										<FormMessage />
 									</FormItem>
 								)}
@@ -96,7 +95,6 @@ const ContactMe = () => {
 										<FormControl>
 											<Input placeholder="" {...field} />
 										</FormControl>
-										{/* <FormDescription>This is your public display name.</FormDescription> */}
 										<FormMessage />
 									</FormItem>
 								)}
@@ -112,7 +110,6 @@ const ContactMe = () => {
 									<FormControl>
 										<Input placeholder="" {...field} />
 									</FormControl>
-									{/* <FormDescription>This is your public display name.</FormDescription> */}
 									<FormMessage />
 								</FormItem>
 							)}
@@ -126,7 +123,6 @@ const ContactMe = () => {
 									<FormControl>
 										<Textarea placeholder="" {...field} />
 									</FormControl>
-									{/* <FormDescription>This is your public display name.</FormDescription> */}
 									<FormMessage />
 								</FormItem>
 							)}

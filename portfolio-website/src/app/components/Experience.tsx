@@ -34,7 +34,7 @@ const TechnicalExperience = () => {
 					</div>
 
 					<div className="basis-4/5">
-						<TimelineItem dates="Jan 2024 - June 2024" title="Govtech - Software Engineering Intern">
+						<TimelineItem dates="Jan 2024 - June 2024" title="GovTech - Software Engineering Intern">
 							Excited for this one!
 						</TimelineItem>
 					</div>

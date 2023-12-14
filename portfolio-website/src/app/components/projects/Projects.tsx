@@ -61,7 +61,7 @@ const Projects = () => {
 		},
 		{
 			image: PortfolioWebsite,
-			text: "This Portfolio Website",
+			text: "This Website",
 			description:"Was really fun to make, shadcn and tailwind really makes web development so much easier. Third time building a portfolio website, the other two are (https://ryanlohyr.github.io/ryanloh/) and (https://ryanlohyr.github.io/practice-portfolio/) if you're wondering.",
 			skills:"NEXTJs, ThreeJS, tailwind, typescript",
 			platform:web,
