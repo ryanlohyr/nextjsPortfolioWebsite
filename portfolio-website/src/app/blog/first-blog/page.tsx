@@ -13,7 +13,7 @@ export default function Blog() {
 					<p>
 						I have never been a writer all my life, neither was I good at it. I did enjoy reading from time
 						to time but it was never something i was really interested in. However, after reading Paul
-						Graham's essay
+						Graham&apos;s essay
 						<a
 							className="text-blue-400 hover:underline"
 							target="_blank"
@@ -40,8 +40,8 @@ export default function Blog() {
 					<p>
 						Hence the reason for this blog. I would like to use this blog to not just share my thoughts on
 						topics that i find interesting, such as startups and machine learning, but also as a tool for
-						enhancing my own understanding of these subjects and I hope whoever reading it will get a insight
-						or two as well.
+						enhancing my own understanding of these subjects and I hope whoever reading it will get a
+						insight or two as well.
 					</p>
 				</div>
 			</div>
