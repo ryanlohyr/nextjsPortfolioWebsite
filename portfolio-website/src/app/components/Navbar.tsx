@@ -1,5 +1,4 @@
 import { ModeToggle } from "@/components/ui/darkModeToggleButton";
-import Link from "next/link";
 import React from "react";
 import { Menu } from "lucide-react";
 
@@ -14,9 +13,11 @@ import {
 
 interface NavbarProps {
 	type: "website" | "blog";
+	addBlog?: boolean; 
 }
 
-const Navbar: React.FC<NavbarProps> = ({ type }) => {
+
+const Navbar: React.FC<NavbarProps> = ({ type, addBlog = false }) => {
 	return (
 		<div>
 			{type == "website" ? (
@@ -27,7 +28,7 @@ const Navbar: React.FC<NavbarProps> = ({ type }) => {
 								<span className="gradient-text">RL</span>
 							</a>
 						</div>
-						<div >
+						<div>
 							<div className="md:hidden block">
 								<DropdownMenu>
 									<DropdownMenuTrigger>
@@ -108,13 +109,20 @@ const Navbar: React.FC<NavbarProps> = ({ type }) => {
 				<nav className="fixed top-0 left-0 right-0 text-white p-4 z-50 ">
 					<div className="container mx-auto flex justify-between items-center">
 						<div>
-							<a href="#" className="text-lg font-bold">
+							<a href="/blog" className="text-lg font-bold">
 								<span className="gradient-text">RL</span>
 							</a>
 						</div>
-						<div className=" dark:bg-black bg-white dark:text-white text-black">
-							<ul className="flex dark:bg-black bg-white">
-								<li className="mr-4 dark:bg-black bg-white">
+						<div className=" dark:bg-black dark:text-white text-black">
+							<ul className="flex dark:bg-black bg-[#f5f5f5]">
+								{addBlog ? (
+									<li className="mr-4 dark:bg-black bg-[#f5f5f5]">
+										<a href="/blog" className="hover:text-gray-300">
+											Blog
+										</a>
+									</li>
+								) : null}
+								<li className="mr-4 dark:bg-black bg-[#f5f5f5]">
 									<a href="/" className="hover:text-gray-300">
 										Portfolio
 									</a>

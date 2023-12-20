@@ -12,8 +12,6 @@ import { ModeToggle } from "@/components/ui/darkModeToggleButton";
 export default function Home() {
 	return (
 		<div id="app">
-			           
-
 			<Navbar type="website"></Navbar>
 			<Hero></Hero>
 			<div className="bg-black text-white">
