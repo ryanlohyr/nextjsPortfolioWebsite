@@ -7,7 +7,7 @@ export default function Blog() {
 	return (
 		<div>
 			<Navbar addBlog={true} type="blog"></Navbar>
-			<div className="mt-[125px]  flex flex-col justify-center items-center">
+			<div className="mt-[125px] pb-[20px]  flex flex-col justify-center items-center">
 				<h2 className="text-[45px] sm:text-[60px] mb-[55px] dark:text-white text-black">Why Blog</h2>
 				<div className="text-lg max-w-[90%] sm:max-w-[60%]">
 					<p>

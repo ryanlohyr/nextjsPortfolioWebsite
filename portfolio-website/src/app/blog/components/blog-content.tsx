@@ -4,7 +4,6 @@ import blogs from "../components/blogs.json";
 const BlogContent = () => {
 	return (
 		<div className="mt-[55px] flex flex-col justify-center h-[300px] items-center">
-			<h1 className="headers dark:text-white text-black">Blog</h1>
 			<div className="w-full flex justify-center">
 				{blogs.map(blog => {
 					return (
