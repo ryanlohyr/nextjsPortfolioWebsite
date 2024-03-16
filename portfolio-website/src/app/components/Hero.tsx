@@ -1,9 +1,10 @@
 declare module "threejs-toys";
 
 import React, { useEffect, useState } from "react";
-
+import { motion } from "framer-motion";
 import { particlesCursor } from "threejs-toys";
 import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
+import { floatUp } from "../page";
 const Hero = () => {
 	const [showNotification, setShowNotification] = useState(false);
 	const [slideOut, setSlideOut] = useState(false);
@@ -119,7 +120,7 @@ const Hero = () => {
 					Drag/tap your mouse/finger on the homepage and see the effects!
 				</div>
 			)}
-			<div>
+			<motion.div variants={floatUp} initial="hidden" animate="visible" >
 				<h1 className="select-none w-auto h-auto leading-none my-auto mx-auto text-[60px]">
 					Hi
 					<br />
@@ -142,7 +143,7 @@ const Hero = () => {
 					</div>
 				</div>
 				
-			</div>
+			</motion.div>
 		</div>
 	);
 };

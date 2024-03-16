@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const floatUp = {
+export const floatUp = {
 	hidden: { y: 50, opacity: 0 },
 	visible: {
 		y: 0,
@@ -30,8 +30,7 @@ export default function Home() {
 	return (
 		<div id="app">
 			<Navbar type="website" />
-			<motion.div variants={floatUp} initial="hidden" animate="visible" >
-				
+			<motion.div>
 				<Hero />
 			</motion.div>
 			<div className="bg-black text-white">
