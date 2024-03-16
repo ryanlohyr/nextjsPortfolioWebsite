@@ -12,11 +12,15 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import emailjs from 'emailjs-com';
 
+const errorMessage = (title: string, isMax: boolean) => {
+	return isMax === false ? `${title} must have minimum of 2 characters`: `${title} must have maximum of 50 characters`;
+}
+
 const formSchema = z.object({
 	email: z.string().email(),
-	name: z.string().min(2).max(50),
-	subject: z.string().min(2).max(50),
-	message: z.string().min(2).max(1000),
+	name: z.string().min(2, { message: errorMessage("Name", false) }).max(50 , { message: errorMessage("Name", true) }),
+	subject: z.string().min(2 , { message: errorMessage("Subject", false) }).max(50 , { message: errorMessage("Subject", true) }),
+	message: z.string().min(2 , { message: errorMessage("Message", false) }).max(1000 , { message: errorMessage("Message", true) }),
 });
 const notifyS = () => toast("Your email has been sent and I will get back to you asap!");
 const notifyF = () => toast("So sorry but there seems to be an error sending this email, perhaps you could email me at ryanloh29@gmail.com");

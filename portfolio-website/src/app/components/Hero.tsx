@@ -71,7 +71,9 @@ const Hero = () => {
 	}, []);
 
 	useEffect(() => {
-		setShowNotification(true);
+		setTimeout(() => {
+			setShowNotification(true);
+		  }, 1500);
 
 		const timer = setTimeout(() => {
 			setSlideOut(true);

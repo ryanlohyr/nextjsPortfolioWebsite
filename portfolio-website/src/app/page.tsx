@@ -15,7 +15,11 @@ const floatUp = {
 	visible: {
 		y: 0,
 		opacity: 1,
+		transition: {
+			duration: 1, // duration in seconds
+		},
 	},
+	
 };
 
 export default function Home() {
@@ -25,8 +29,9 @@ export default function Home() {
 	const [contactRef, contactInView] = useInView({ triggerOnce: false });
 	return (
 		<div id="app">
+			<Navbar type="website" />
 			<motion.div variants={floatUp} initial="hidden" animate="visible" >
-				<Navbar type="website" />
+				
 				<Hero />
 			</motion.div>
 			<div className="bg-black text-white">
