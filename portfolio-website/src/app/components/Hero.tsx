@@ -1,10 +1,22 @@
-declare module "threejs-toys";
+"use client"
 
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { particlesCursor } from "threejs-toys";
 import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
-import { floatUp } from "../page";
+
+const floatUp = {
+	hidden: { y: 50, opacity: 0 },
+	visible: {
+		y: 0,
+		opacity: 1,
+		transition: {
+			duration: 1, // duration in seconds
+		},
+	},
+	
+};
+
 const Hero = () => {
 	const [showNotification, setShowNotification] = useState(false);
 	const [slideOut, setSlideOut] = useState(false);

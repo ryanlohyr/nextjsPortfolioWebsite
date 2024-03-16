@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-export const floatUp = {
+const floatUp = {
 	hidden: { y: 50, opacity: 0 },
 	visible: {
 		y: 0,
