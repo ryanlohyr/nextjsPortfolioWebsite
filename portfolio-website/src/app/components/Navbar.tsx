@@ -2,25 +2,11 @@ import { ModeToggle } from "@/components/ui/darkModeToggleButton";
 import React from "react";
 import { Menu } from "lucide-react";
 
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
 
 import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 
@@ -48,7 +34,7 @@ const Navbar: React.FC<NavbarProps> = ({ type, addBlog = false }) => {
                   <SheetTrigger asChild>
 				  <Menu></Menu>
                   </SheetTrigger>
-                  <SheetContent className="bg-black flex flex-col border-1-4 border-gray-300">
+                  <SheetContent className="text-white bg-black flex flex-col border-1-4 border-gray-300">
 					<SheetClose>
                       <a href="#" className="hover:text-gray-300">
                         Home
