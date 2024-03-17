@@ -5,7 +5,7 @@ import React from 'react';
 
 export default function Blog() {
     return (
-        <div>
+        <div className=''>
             <h1>Blog Page</h1>
             {/* Other components or content for your blog page */}
         </div>

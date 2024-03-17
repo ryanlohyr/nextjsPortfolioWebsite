@@ -8,7 +8,7 @@ import BlogContent from './components/blog-content';
 
 export default function Blog() {
     return (
-        <div >
+        <div>
             <Navbar type="blog"></Navbar>
             <BlogContent></BlogContent>           
         </div>

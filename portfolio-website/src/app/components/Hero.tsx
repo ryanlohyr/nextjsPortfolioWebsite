@@ -7,12 +7,12 @@ import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
 import { useInView } from "react-intersection-observer";
 
 const floatUp = {
-  hidden: { y: 100, opacity: 0 },
+  hidden: { y: 50, opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 1, // duration in seconds
+      duration: 0.4, // duration in seconds
     },
   },
 };
